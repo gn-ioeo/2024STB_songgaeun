@@ -26,7 +26,7 @@ table(KOTRA2024 $`type of investment`)
 
 #파이차트의 색상지정
 colors <- c("red", "orange", "yellow", "green", "blue")
-pie(table(KOTRA2024 $`type of investment`), col=topo.colors(12),main="해외진출기업의 투자형태")
+pie(table(KOTRA2024 $`type of investment`), col=colors,main="해외진출기업의 투자형태")
 
 #그래프의 색상을 추가하기 위해 팔레트 패키지 설치
 install.packages("RColorBrewer")
@@ -37,7 +37,6 @@ display.brewer.all()#패키지 확인
 #설치된 팔레트로 파이차트의 색상을 변경해 보자!
 pal1 <- brewer.pal(5, 'Set3')#Set3컬러를 사용
 pie(table(KOTRA2024 $`type of investment`), col=pal1, main="해외진출기업의 투자형태")
-
 #막대그래프1 편집
 barplot(table(KOTRA2024 $Area))#기본
 barplot(table(KOTRA2024 $Area),col=pal1, xlab = "진출대륙명", ylab = "진출기업수", ylim=c(0,7000))#y축값 지정, 색 변경
